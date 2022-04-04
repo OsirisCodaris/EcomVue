@@ -37,7 +37,8 @@ _axios.interceptors.response.use(
     return response;
   },
   function (error) {
-    if(error.response.status === 401 ){
+    console.log()
+    if(error.response.status === 401 && error.response.config.url != "/authentification" ){
       store.dispatch('settoken',null);
       router.push('/login')
       return Promise.reject(error);

@@ -53,7 +53,6 @@
                       <v-col cols="12" md="9">
                         <v-text-field
                           v-model="ncarte"
-                          :rules="NcarteRules"
                           :counter="14"
                           label="Numero de carte"
                           required
@@ -107,11 +106,6 @@ export default {
   data() {
     return {
       valid: false,
-      NcarteRules: [
-        (v) => !!v || "Le numéro de carte est requis",
-        (v) => v.length <= 14 || "Le numéro de carte doit contenir 14 chiffres",
-        (v) => v.isNaN() || "Seul les chiffres sont valide",
-      ],
       ncarte: "",
       cvv: "",
       phonenumber: "",
@@ -139,6 +133,9 @@ export default {
     },
     removeitemcart(item) {
       this.$store.dispatch("removeitems", item);
+    },
+    submit() {
+      alert("payement");
     },
   },
 };

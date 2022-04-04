@@ -86,9 +86,7 @@
     <template v-slot:item.img="{ item }">
       <v-img :src="item.img" aspect-ratio="1.7" max-height="50" contain></v-img>
     </template>
-    <template v-slot:no-data>
-      <v-btn color="primary" @click="initialize"> Reset </v-btn>
-    </template>
+    <template v-slot:no-data> Pas d'article </template>
   </v-data-table>
 </template>
 
